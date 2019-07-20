@@ -1,0 +1,36 @@
+{
+  "name": "ratoverflow",
+  "version": "0.1.0",
+  "description": "rat game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && parcel build src/index.html --public-url /",
+    "dev": "rimraf dist && parcel src/index.html",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "rat",
+    "game"
+  ],
+  "author": "Sen <superfastblitzmann@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "parcel": "^1.12.3",
+    "rimraf": "^2.6.3",
+    "sass": "^1.22.7"
+  }
+}
