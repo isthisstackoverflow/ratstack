@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "description": "this is the place where all the ratties go",
   "scripts": {
-    "test": "jest",
-    "lint": "eslint .",
     "build": "rimraf dist && parcel build src/index.html --public-url /",
     "dev": "rimraf dist && parcel src/index.html",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:dev": "jest --coverage --coverageReporters=text --watchAll"
   },
   "keywords": [
     "rat",
