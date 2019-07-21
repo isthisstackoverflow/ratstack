@@ -5,6 +5,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/63f918e12a10d088e615/maintainability)](https://codeclimate.com/github/isthisstackoverflow/ratstack/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/63f918e12a10d088e615/test_coverage)](https://codeclimate.com/github/isthisstackoverflow/ratstack/test_coverage)
 [![CircleCI](https://circleci.com/gh/isthisstackoverflow/ratstack/tree/master.svg?style=svg)](https://circleci.com/gh/isthisstackoverflow/ratstack/tree/master)
+[![DependenciesUpToDate](https://david-dm.org/isthisstackoverflow/ratstack.svg)](https://david-dm.org/isthisstackoverflow/ratstack#info=dependencies)
+[![DevDependenciesUpToDate](https://david-dm.org/isthisstackoverflow/ratstack/dev-status.svg)](https://david-dm.org/isthisstackoverflow/ratstack#info=devDependencies)
 
 # RATSTACK 🐀
 
