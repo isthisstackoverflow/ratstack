@@ -1,10 +1,10 @@
 {
-  "name": "ratoverflow",
+  "name": "ratstack",
   "version": "0.1.0",
-  "description": "rat game",
-  "main": "index.js",
+  "description": "this is the place where all the ratties go",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "lint": "eslint .",
     "build": "rimraf dist && parcel build src/index.html --public-url /",
     "dev": "rimraf dist && parcel src/index.html",
     "start": "npm run dev"
