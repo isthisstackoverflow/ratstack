@@ -2,6 +2,27 @@
 
 I have no idea, so I write it down.
 
+## some ideas thrown in
+
+AcceleRATed GeneRATions - Think, + Rats
+AccuRATe throwing - Think, + Attack
+Central BureaucRATic DemocRATic AdministRATion, Think, + Obedience, Screeching
+ConfedeRATe, Think, + Obedience, Screeching
+CorpoRATe Wonderland, Think, + Eat - Obedience, Screeching
+DegeneRATe CelebRATion, Think, + Rats - Eat - Obedience - Think, Mafia
+DirectoRATe, Think, + Obedience, Screeching
+RATionalism, Thin, - Obedience + Think
+Leader AdmiRATion, Think, + Obedience, Holy Rat Empire
+AppaRATus, Think, + Eat, Lordship
+AristocRATs, Think, + Obedience - Eat, Lordship
+BeRATing bRATs, + Obedience - Eat, Mafia
+CollaboRATion, + Attack, Mafia
+ConcentRATion, + Think, Mafia
+
+HippocRATes
+HoRATio
+SokRATes
+
 ## Turn Phases
 
 * Receive
