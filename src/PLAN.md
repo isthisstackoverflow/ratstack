@@ -2,7 +2,7 @@
 
 I have no idea, so I write it down.
 
-## some ideas thrown in
+## some jokes thrown in
 
 AcceleRATed GeneRATions - Think, + Rats
 AccuRATe throwing - Think, + Attack
@@ -23,60 +23,7 @@ HippocRATes
 HoRATio
 SokRATes
 
-## Turn Phases
-
-* Receive
-  * Income
-  * Event Information / Decision
-    * Sometimes just info, sometimes options
-* Move
-  * Can move every rat once to any neighbour region
-    * Go steal
-    * Go terrorize (if researched)
-    * Go subjugate (if researched)
-    * Move Move (only possible for own and friendly territory)
-  * Results change numbers
-* Build
-  * Build slot per region (has infinite productions)
-  * Global research (fast, rats be fast; think)
-  * Policies (how rats are controlled)
-  * Declarations (game-changing, rare)
-
-## Values
-
-* Global
-  * Eat
-    * Can be invested in build
-    * Is gained from environment and warfare
-  * Think
-    * Depend on globally not moved rats
-* Regional
-  * Rats
-    * Can be moved; if they stay, produce global think
-    * Grow in count if at least 2
-    * Food surplus is turned into rats to some degree
-  * Obedience
-    * If low, rats start to decide what to do themselves
-    * If very low, rats may decide to rebel
-      * Decide: Fight / Bribe / Retreat
-        * Fight: Reduce rat count
-          * Win: Add obedience
-          * Lose: Region becomes new faction
-        * Bribe
-          * Reduce Eat drastically
-          * Add obedience
-        * Retreat
-          * Region becomes new faction
-          * Some rats retreat to neighbouring friendly territory
-
 ## Declarations / Policies / Think / Build
-
-New declaration can be chosen after certain things
-on previous declaration have been done. Declarations
-need not exclude each other, and not all declarations
-must be played.
-
-Maybe policies are a bad idea tbh.
 
 * Declarations
   * Pack

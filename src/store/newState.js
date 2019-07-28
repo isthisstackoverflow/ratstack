@@ -1,27 +1,30 @@
 import { DECLARATIONS } from './enums'
-import { districtParts } from '../data/districtRelations'
+import { districtParts as partNames } from '../data/districtRelations'
 import generateFactionName from './generateFactionName'
 
-const initFactionData = name => ({
+const initFactionData = () => ({
   name: generateFactionName(),
   declaration: DECLARATIONS.PACK,
-  eat: 1000,
-  districts: [name]
+  think: [],
+  eat: 1000
 })
 
-const initDistrictData = name => ({
+const initDistrictData = (name, faction) => ({
   name,
+  faction,
   rats: 8,
-  obedience: 0
+  obedience: 0,
+  buildings: []
 })
 
-const getNewGameState = () => {
-  const gameState = {}
+export default () => {
+  const factionData = partNames.map(initFactionData)
+  const districtParts = partNames.map((partName, i) => {
+    initDistrictData(partName, factionData[i])
+  })
 
-  gameState.districtParts = districtParts.map(initDistrictData)
-  gameState.factionData = districtParts.map(initFactionData)
-
-  return gameState
+  return {
+    factionData,
+    districtParts
+  }
 }
-
-export default getNewGameState
