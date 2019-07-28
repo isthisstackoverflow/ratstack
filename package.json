@@ -18,6 +18,11 @@
   ],
   "author": "Sen <superfastblitzmann@gmail.com>",
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test"
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
