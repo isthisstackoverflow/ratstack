@@ -16,15 +16,7 @@ script:
   - npm run lint
   - npm run test:coverage
   - npm run build
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
   - cp -r .circleci ./dist/.circleci
-notifications:
-  email:
-    recipients:
-    - superfastblitzmann@gmail.com
-    on_success: change
-    on_failure: always
 deploy:
   provider: pages
   local_dir: ./dist
@@ -32,3 +24,11 @@ deploy:
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   on:
     branch: master
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+notifications:
+  email:
+    recipients:
+      - superfastblitzmann@gmail.com
+    on_success: change
+    on_failure: always
