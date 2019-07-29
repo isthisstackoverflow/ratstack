@@ -7,6 +7,7 @@
 [![CircleCI](https://circleci.com/gh/isthisstackoverflow/ratstack/tree/master.svg?style=svg)](https://circleci.com/gh/isthisstackoverflow/ratstack/tree/master)
 [![DependenciesUpToDate](https://david-dm.org/isthisstackoverflow/ratstack.svg)](https://david-dm.org/isthisstackoverflow/ratstack#info=dependencies)
 [![DevDependenciesUpToDate](https://david-dm.org/isthisstackoverflow/ratstack/dev-status.svg)](https://david-dm.org/isthisstackoverflow/ratstack#info=devDependencies)
+[![PeerDependenciesUpToDate](https://david-dm.org/isthisstackoverflow/ratstack/peer-status.svg)](https://david-dm.org/isthisstackoverflow/ratstack#info=peerDependencies)
 
 # RATSTACK 🐀
 
