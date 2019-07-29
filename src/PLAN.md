@@ -1,6 +1,6 @@
 # Implementation Plan
 
-I have no idea, so I write it down.
+I have no idea, so I write it down. 🐀
 
 ## some jokes thrown in
 
