@@ -1,26 +1,13 @@
-import 'ol/ol.css'
-
 import './styles.scss'
 
-import Map from 'ol/Map.js'
-import View from 'ol/View.js'
-import TileLayer from 'ol/layer/Tile.js'
-import OSM from 'ol/source/OSM.js'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-// this file should only combine the various parts of the system, nothing else
+import View from './view'
+import renderMap from './view/renderMap'
 
-// TODO put this to some file and import map
-const map = new Map({
-  layers: [
-    new TileLayer({
-      source: new OSM()
-    })
-  ],
-  target: 'boss',
-  view: new View({
-    center: [0, 0],
-    zoom: 2
-  })
-})
+const target = 'map-boss'
+const center = [10.01534, 53.57532]
 
-console.log('This is nice.', map)
+renderMap(center, target)
+ReactDOM.render(<View />, document.getElementById('user-interface'))
