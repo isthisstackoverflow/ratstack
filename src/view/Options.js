@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 
+import EmojiButton from './EmojiButton'
+
+import { rat } from '../emojis'
+
 const OptionsMenu = styled.div`
   width: 80%;
   background: grey;
@@ -26,6 +30,7 @@ export default class App extends PureComponent {
         <Button>Dude</Button>
         <Button>Buttons</Button>
         <Button>LMAO</Button>
+        <EmojiButton emoji={rat}>Rat</EmojiButton>
       </OptionsMenu>
     )
   }
