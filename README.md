@@ -8,6 +8,7 @@
 [![DependenciesUpToDate](https://david-dm.org/isthisstackoverflow/ratstack.svg)](https://david-dm.org/isthisstackoverflow/ratstack#info=dependencies)
 [![DevDependenciesUpToDate](https://david-dm.org/isthisstackoverflow/ratstack/dev-status.svg)](https://david-dm.org/isthisstackoverflow/ratstack#info=devDependencies)
 [![PeerDependenciesUpToDate](https://david-dm.org/isthisstackoverflow/ratstack/peer-status.svg)](https://david-dm.org/isthisstackoverflow/ratstack#info=peerDependencies)
+[![Pulse Status](https://img.shields.io/github/last-commit/isthisstackoverflow/ratstack.svg)](https://github.com/isthisstackoverflow/ratstack/pulse)
 
 # RATSTACK 🐀
 
