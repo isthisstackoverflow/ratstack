@@ -3,34 +3,22 @@ import styled from 'styled-components'
 
 import EmojiButton from './EmojiButton'
 
-import { rat } from '../emojis'
+import emojis from '../emojis'
 
 const OptionsMenu = styled.div`
-  width: 80%;
-  background: grey;
-  color: white;
-  margin: 0 auto;
-`
-
-const Button = styled.button`
-  background: white;
-  color: palevioletred;
-
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
+  max-width: 80%;
+  background: #099;
+  padding: 32px;
 `
 
 export default class App extends PureComponent {
   render () {
     return (
       <OptionsMenu>
-        <Button>Dude</Button>
-        <Button>Buttons</Button>
-        <Button>LMAO</Button>
-        <EmojiButton emoji={rat}>Rat</EmojiButton>
+        <EmojiButton>Yes</EmojiButton>
+        <EmojiButton disabled={true}>No</EmojiButton>
+        <EmojiButton emoji={emojis.rat}>Rat</EmojiButton>
+        <EmojiButton emoji={emojis.options} />
       </OptionsMenu>
     )
   }
