@@ -1,33 +1,51 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 
-import Options from './Options'
+import EmojiButton from './EmojiButton'
 
-const CenterFlex = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+import Options from './Options'
+import Statistics from './Statistics'
+
+import emojis from '../emojis'
+
+const Center = styled.div`
+  position: fixed;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 `
 
-const RedBoi = styled.div`
-  background: red;
-  color: cadetblue;
+const TopRight = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0.5em;
+  right: 0.5em;
+`
+
+const BottomRight = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0.5em;
+  left: 0.5em;
 `
 
 export default class View extends PureComponent {
   render () {
     return (
       <>
-        <CenterFlex>
+        <TopRight>
+          <EmojiButton emoji={emojis.options} />
+        </TopRight>
+        <Center>
           <Options />
-        </CenterFlex>
-        <RedBoi>
-          RATTICALISM HO!
-        </RedBoi>
+        </Center>
+        <BottomRight>
+          <Statistics />
+        </BottomRight>
       </>
     )
   }

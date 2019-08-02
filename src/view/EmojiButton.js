@@ -13,7 +13,6 @@ const StyledEmojiButton = styled.button`
   border: 2px solid black;
   border-radius: 6px;
 
-  margin: 2px;
   padding: 8px 4px;
 
   &:hover {
@@ -34,7 +33,7 @@ const StyledEmojiButton = styled.button`
   }
 `
 
-const EmojiButton = ({ emoji, children, disabled }) => console.log(disabled) || (
+const EmojiButton = ({ emoji, children, disabled }) => (
   <StyledEmojiButton disabled={disabled}>
     {emoji} {children}
   </StyledEmojiButton>
