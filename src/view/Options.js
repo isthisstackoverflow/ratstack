@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 
-import EmojiButton from './EmojiButton'
+import Button from './Button'
 
 import emojis from '../emojis'
 
@@ -15,10 +15,10 @@ export default class App extends PureComponent {
   render () {
     return (
       <OptionsMenu>
-        <EmojiButton>Yes</EmojiButton>
-        <EmojiButton disabled={true}>No</EmojiButton>
-        <EmojiButton emoji={emojis.rat}>Rat</EmojiButton>
-        <EmojiButton emoji={emojis.options} />
+        <Button>Yes</Button>
+        <Button disabled>No</Button>
+        <Button>{`${emojis.rat} Rat`}</Button>
+        <Button>{emojis.options}</Button>
       </OptionsMenu>
     )
   }

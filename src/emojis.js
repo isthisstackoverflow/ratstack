@@ -16,6 +16,8 @@ export default {
   monarchy: '👑',
   nation: '⚜️',
   message: '📜',
+  plus: '➕',
+  minus: '➖',
   foodArray: [
     '🍇', '🍈', '🍉', '🍊', '🍋',
     '🍌', '🍍', '🥭', '🍎', '🍏',

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledStatistics = styled.table`
+const StyledStatistics = styled.ul`
   background: #CCC;
   color: black;
 

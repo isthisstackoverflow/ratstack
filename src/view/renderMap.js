@@ -21,6 +21,7 @@ export default (center, target) => {
       })
     ],
     target,
+    controls: [],
     view: new View({
       center: fromLonLat(center),
       zoom: 10,
