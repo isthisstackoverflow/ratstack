@@ -8,48 +8,19 @@ import Corner from './Corner'
 import Button from './Button'
 import Options from './Options'
 import Statistics from './Statistics'
+import ZoomButtons from './ZoomButtons'
+
+import renderMap from './renderMap'
+import emojis from './emojis'
 
 import { getTest } from '../store/selectors'
 
-import emojis from '../emojis'
-
 class View extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = this.getNextState()
-  }
-
-  getNextState () {
-    const view = this.props.map.getView()
-    return {
-      zoomInDisabled: view.getZoom() === view.getMaxZoom(),
-      zoomOutDisabled: view.getZoom() === view.getMinZoom()
-    }
-  }
-
-  getZoom (by) {
-    return () => {
-      const view = this.props.map.getView()
-      view.animate({
-        zoom: view.getZoom() + by,
-        duration: 200
-      })
-      this.setState(this.getNextState())
-    }
-  }
-
   render () {
     return (
       <>
         <Corner top left>
-          <Button
-            onClick={this.getZoom(1)}
-            disabled={this.state.zoomInDisabled}
-          >{emojis.plus}</Button>
-          <Button
-            onClick={this.getZoom(-1)}
-            disabled={this.state.zoomOutDisabled}
-          >{emojis.minus}</Button>
+          <ZoomButtons view={this.props.map.getView()} />
         </Corner>
         <Corner top right>
           <Button>{emojis.options}</Button>
@@ -90,3 +61,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(View)
+
+export { renderMap }

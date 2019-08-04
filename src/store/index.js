@@ -1,4 +1,5 @@
 import Store from 'repatch'
+import newState from './newState'
 
 const logger = store => next => reducer => {
   const state = store.getState()
@@ -8,9 +9,8 @@ const logger = store => next => reducer => {
 }
 
 // nesting game state in case I'll have data outside of it
-const store = new Store({
-  gameState: null,
-  howDidThisWorkAgain: 'testing'
-}).addMiddleware(logger)
+const store =
+  new Store(newState())
+    .addMiddleware(logger)
 
 export default store
