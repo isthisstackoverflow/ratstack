@@ -17,19 +17,25 @@ const initDistrictData = (name, faction) => ({
   buildings: []
 })
 
-export default () => {
+const getMap = olMap => {
+  const view = olMap.getView()
+  return {
+    minZoom: view.getMinZoom(),
+    maxZoom: view.getMaxZoom()
+  }
+}
+
+export default (olMap) => {
   const faction = partNames.map(initFactionData)
   const district = partNames.map((partName, i) => {
     initDistrictData(partName, faction[i])
   })
-  const map = {
-    minZoom: 10,
-    maxZoom: 28
-  }
+  const map = getMap(olMap)
 
   return {
     faction,
     district,
-    map
+    map,
+    olMap
   }
 }

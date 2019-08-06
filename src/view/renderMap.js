@@ -3,8 +3,13 @@ import 'ol/ol.css'
 import Map from 'ol/Map.js'
 import View from 'ol/View.js'
 import TileLayer from 'ol/layer/Tile.js'
+import VectorLayer from 'ol/layer/Vector.js'
+import VectorSource from 'ol/source/Vector.js'
+import GeoJSON from 'ol/format/GeoJSON.js'
 import OSM from 'ol/source/OSM.js'
 import { fromLonLat } from 'ol/proj'
+
+import districts from '../data/districts.json'
 
 /**
  * Clean map div and render map to it.
@@ -18,6 +23,11 @@ export default (center, target) => {
     layers: [
       new TileLayer({
         source: new OSM()
+      }),
+      new VectorLayer({
+        source: new VectorSource({
+          features: (new GeoJSON()).readFeatures(districts)
+        })
       })
     ],
     target,
@@ -25,7 +35,8 @@ export default (center, target) => {
     view: new View({
       center: fromLonLat(center),
       zoom: 10,
-      minZoom: 10
+      minZoom: 10,
+      maxZoom: 13
     })
   })
 }
