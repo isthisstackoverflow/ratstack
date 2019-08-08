@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import Center from './Center'
 import Corner from './Corner'
@@ -10,7 +12,10 @@ import ZoomButtons from './ZoomButtons'
 import renderMap from './renderMap'
 import emojis from './emojis'
 
-class View extends React.Component {
+import { getOptionsMenuOpen } from '../store/selectors'
+import { toggleOptionsMenuOpen } from '../store/actions'
+
+class View extends React.PureComponent {
   render () {
     return (
       <>
@@ -18,7 +23,7 @@ class View extends React.Component {
           <ZoomButtons />
         </Corner>
         <Corner top right>
-          <Button>{emojis.options}</Button>
+          <Button onClick={this.props.toggleOptionsMenuOpen}>{emojis.options}</Button>
         </Corner>
         <Center>
           <Options />
@@ -32,5 +37,16 @@ class View extends React.Component {
   }
 }
 
+View.propTypes = {
+  optionsMenuOpen: PropTypes.bool.isRequired,
+  toggleOptionsMenuOpen: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+  optionsMenuOpen: getOptionsMenuOpen(state)
+})
+
+const mapDispatchToProps = { toggleOptionsMenuOpen }
+
 export { renderMap }
-export default View
+export default connect(mapStateToProps, mapDispatchToProps)(View)

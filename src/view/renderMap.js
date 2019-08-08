@@ -26,7 +26,11 @@ export default (center, target) => {
       }),
       new VectorLayer({
         source: new VectorSource({
-          features: (new GeoJSON()).readFeatures(districts)
+          features:
+            (new GeoJSON({
+              featureProjection: 'EPSG:3857'
+            }))
+              .readFeatures(districts)
         })
       })
     ],

@@ -36,6 +36,9 @@ export default (olMap) => {
     faction,
     district,
     map,
-    olMap
+    olMap,
+    ui: {
+      optionsMenuOpen: false
+    }
   }
 }

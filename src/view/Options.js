@@ -1,8 +1,12 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import Button from './Button'
 import emojis from './emojis'
+
+import { getOptionsMenuOpen } from '../store/selectors'
 
 const OptionsMenu = styled.div`
   max-width: 80%;
@@ -10,8 +14,12 @@ const OptionsMenu = styled.div`
   padding: 32px;
 `
 
-export default class App extends PureComponent {
+class Options extends React.Component {
   render () {
+    if (!this.props.optionsMenuOpen) {
+      return null
+    }
+
     return (
       <OptionsMenu>
         <Button>Yes</Button>
@@ -22,3 +30,13 @@ export default class App extends PureComponent {
     )
   }
 }
+
+Options.propTypes = {
+  optionsMenuOpen: PropTypes.bool.isRequired
+}
+
+const mapStateToProps = state => ({
+  optionsMenuOpen: getOptionsMenuOpen(state)
+})
+
+export default connect(mapStateToProps)(Options)

@@ -3,6 +3,14 @@ import { animateDuration as duration } from '../../lib/constants'
 
 export { executeTurn }
 
+export const toggleOptionsMenuOpen = () => state => ({
+  ...state,
+  ui: {
+    ...state.ui,
+    optionsMenuOpen: !state.ui.optionsMenuOpen
+  }
+})
+
 /**
  * Updates the ol map zoom boundaries and zooms
  * accordingly if map is now outside of it.
