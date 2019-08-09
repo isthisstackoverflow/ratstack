@@ -1,31 +1,23 @@
 import Store from 'repatch'
 import newState from './newState'
 import isDevMode from '../lib/isDevMode'
+import diff from '../lib/diff'
 
 // logger from repatch example is nice
 const logger = store => next => reducer => {
   const state = store.getState()
   const nextState = reducer(state)
-  console.log(state, nextState)
+  const old = diff(state, nextState)
+  const nuevo = diff(nextState, state)
+  console.log('%c old -> new ', 'background: #222; color: #bada55')
+  console.table(old)
+  console.table(nuevo)
   return next(_ => nextState)
 }
 
-/**
- * Creates a new game instance store.
- * Please mind that I'm a hack, so there's actually
- * an .olMap entry in the state that goes against
- * the rules of immutable store management. It's just
- * easier to get and modify the ol map with side-effects.
- * Pssssht, don't tell mom.
- * @param {ol/map} olMap OpenLayers Map
- * @returns {Store}
- */
-const store = olMap => {
-  const s = new Store(newState(olMap))
-  if (isDevMode) {
-    s.addMiddleware(logger)
-  }
-  return s
+const store = new Store(newState())
+if (isDevMode) {
+  store.addMiddleware(logger)
 }
 
 export default store

@@ -1,44 +1,28 @@
 import { DECLARATION } from './definitions'
-import { districtParts as partNames } from '../data/districtRelations'
 import generateFactionName from './generateFactionName'
 
-const initFactionData = () => ({
+import { districtParts as partNames } from '../data/districtRelations'
+
+const initFactionData = id => ({
+  id,
   name: generateFactionName(),
   declaration: DECLARATION.PACK,
   think: [],
   eat: 1000
 })
 
-const initDistrictData = (name, faction) => ({
+const initDistrictData = (name, factionId) => ({
   name,
-  faction,
+  factionId,
   rats: 8,
   obedience: 0,
   buildings: []
 })
 
-const getMap = olMap => {
-  const view = olMap.getView()
-  return {
-    minZoom: view.getMinZoom(),
-    maxZoom: view.getMaxZoom()
+export default () => ({
+  factions: partNames.map((_, idx) => initFactionData(idx)),
+  districts: partNames.map((partName, i) => initDistrictData(partName, i)),
+  ui: {
+    optionsMenuOpen: false
   }
-}
-
-export default (olMap) => {
-  const faction = partNames.map(initFactionData)
-  const district = partNames.map((partName, i) => {
-    initDistrictData(partName, faction[i])
-  })
-  const map = getMap(olMap)
-
-  return {
-    faction,
-    district,
-    map,
-    olMap,
-    ui: {
-      optionsMenuOpen: false
-    }
-  }
-}
+})

@@ -1,10 +1,5 @@
-export const getMap = state => state.map
-export const getOlMap = state => state.olMap
-export const getFaction = state => state.faction
-export const getDistrict = state => state.district
-export const getUi = state => state.ui
+export const factionsSelector = state => state.factions
+export const districtsSelector = state => state.districts
+export const uiSelector = state => state.ui
 
-export const getMaxZoom = state => getMap(state).maxZoom
-export const getMinZoom = state => getMap(state).minZoom
-
-export const getOptionsMenuOpen = state => getUi(state).optionsMenuOpen
+export const optionsMenuOpenSelector = state => uiSelector(state).optionsMenuOpen

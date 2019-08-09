@@ -5,14 +5,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import View, { renderMap } from './view'
+import View from './view'
 import store from './store'
 
-const center = [10.01534, 53.57532]
-
-const map = renderMap(center, 'map-boss')
 ReactDOM.render(
-  <Provider store={store(map)}>
+  <Provider store={store}>
     <View />
   </Provider>,
   document.getElementById('user-interface')

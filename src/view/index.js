@@ -9,10 +9,9 @@ import Options from './Options'
 import Statistics from './Statistics'
 import ZoomButtons from './ZoomButtons'
 
-import renderMap from './renderMap'
 import emojis from './emojis'
 
-import { getOptionsMenuOpen } from '../store/selectors'
+import { optionsMenuOpenSelector } from '../store/selectors'
 import { toggleOptionsMenuOpen } from '../store/actions'
 
 class View extends React.PureComponent {
@@ -43,10 +42,9 @@ View.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  optionsMenuOpen: getOptionsMenuOpen(state)
+  optionsMenuOpen: optionsMenuOpenSelector(state)
 })
 
 const mapDispatchToProps = { toggleOptionsMenuOpen }
 
-export { renderMap }
 export default connect(mapStateToProps, mapDispatchToProps)(View)

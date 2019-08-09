@@ -1,51 +1,34 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 
 import Button from './Button'
 import emojis from './emojis'
 
 import { animateDuration as duration } from '../lib/constants'
-
-import {
-  getMaxZoom,
-  getMinZoom,
-  getOlMap
-} from '../store/selectors'
+import map from '../map'
 
 class ZoomButtons extends React.Component {
   constructor (props) {
     super(props)
     this.state = this.getNextState()
-    this.currZoom = props.view.getZoom()
-    props.olMap.on('moveend', this.updateZoom.bind(this))
+    map.on('moveend', () =>
+      this.setState(this.getNextState())
+    )
   }
 
   getNextState () {
-    const { view, minZoom, maxZoom } = this.props
+    const view = map.getView()
     return {
-      zoomOutDisabled: view.getZoom() === minZoom,
-      zoomInDisabled: view.getZoom() === maxZoom
+      zoomOutDisabled: view.getZoom() === view.getMinZoom(),
+      zoomInDisabled: view.getZoom() === view.getMaxZoom()
     }
   }
 
   getZoom (by) {
-    const { view } = this.props
-    return () => {
-      view.animate({
-        zoom: view.getZoom() + by,
-        duration
-      })
-      this.setState(this.getNextState())
-    }
-  }
-
-  updateZoom () {
-    const newZoom = this.props.view.getZoom()
-    if (this.currZoom !== newZoom) {
-      this.currZoom = newZoom
-      this.setState(this.getNextState())
-    }
+    const view = map.getView()
+    return () => view.animate({
+      zoom: view.getZoom() + by,
+      duration
+    })
   }
 
   render () {
@@ -68,18 +51,4 @@ class ZoomButtons extends React.Component {
   }
 }
 
-ZoomButtons.propTypes = {
-  olMap: PropTypes.object.isRequired,
-  view: PropTypes.object.isRequired,
-  maxZoom: PropTypes.number.isRequired,
-  minZoom: PropTypes.number.isRequired
-}
-
-const mapStateToProps = state => ({
-  olMap: getOlMap(state),
-  view: getOlMap(state).getView(),
-  maxZoom: getMaxZoom(state),
-  minZoom: getMinZoom(state)
-})
-
-export default connect(mapStateToProps)(ZoomButtons)
+export default ZoomButtons

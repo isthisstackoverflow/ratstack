@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import Button from './Button'
 import emojis from './emojis'
 
-import { getOptionsMenuOpen } from '../store/selectors'
+import { optionsMenuOpenSelector } from '../store/selectors'
 
 const OptionsMenu = styled.div`
   max-width: 80%;
@@ -36,7 +36,7 @@ Options.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  optionsMenuOpen: getOptionsMenuOpen(state)
+  optionsMenuOpen: optionsMenuOpenSelector(state)
 })
 
 export default connect(mapStateToProps)(Options)
