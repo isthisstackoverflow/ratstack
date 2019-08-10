@@ -13,6 +13,7 @@ import emojis from './emojis'
 
 import { optionsMenuOpenSelector } from '../store/selectors'
 import { toggleOptionsMenuOpen } from '../store/actions'
+import { updateColors } from '../map/update'
 
 class View extends React.PureComponent {
   render () {
@@ -42,7 +43,8 @@ View.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  optionsMenuOpen: optionsMenuOpenSelector(state)
+  optionsMenuOpen: optionsMenuOpenSelector(state),
+  testTrigger: updateColors(state)
 })
 
 const mapDispatchToProps = { toggleOptionsMenuOpen }

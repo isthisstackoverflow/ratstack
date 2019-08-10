@@ -48,6 +48,7 @@
     "babel-polyfill": "^6.26.0",
     "lodash.isequal": "^4.5.0",
     "lodash.isobject": "^3.0.2",
+    "lodash.shuffle": "^4.2.0",
     "lodash.transform": "^4.6.0",
     "ol": "^5.3.3",
     "prop-types": "^15.7.2",

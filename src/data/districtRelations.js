@@ -240,3 +240,9 @@ export const districtToPart = {
     'Tatenberg'
   ]
 }
+
+export const districtIndex =
+  districtParts.reduce((acc, next, i) => {
+    acc[next] = i
+    return acc
+  }, {})

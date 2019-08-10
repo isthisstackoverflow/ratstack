@@ -1,10 +1,14 @@
 import { DECLARATION } from './definitions'
 import generateFactionName from './generateFactionName'
 
+import { getHslColorsFor } from '../lib/randomColor'
 import { districtParts as partNames } from '../data/districtRelations'
+
+const colors = getHslColorsFor(partNames)
 
 const initFactionData = id => ({
   id,
+  color: colors[id],
   name: generateFactionName(),
   declaration: DECLARATION.PACK,
   think: [],
