@@ -14,6 +14,6 @@
 
 Something gReAT this way comes.
 
-But it's not quite here yet.
+But it's not quite here yet, and will probably take months to years.
 
 [GitHub Page](https://isthisstackoverflow.github.io/ratstack/).
