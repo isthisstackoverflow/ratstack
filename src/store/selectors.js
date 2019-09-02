@@ -1,8 +1,5 @@
-export const getTest = state => state.howDidThisWorkAgain
+export const factionsSelector = state => state.factions
+export const districtsSelector = state => state.districts
+export const uiSelector = state => state.ui
 
-export const getMap = state => state.map
-export const getFaction = state => state.faction
-export const getDistrict = state => state.district
-
-export const getMaxZoom = state => state.map.maxZoom
-export const getMinZoom = state => state.map.minZoom
+export const optionsMenuOpenSelector = state => uiSelector(state).optionsMenuOpen

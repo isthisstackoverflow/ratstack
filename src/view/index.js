@@ -4,32 +4,29 @@ import { connect } from 'react-redux'
 
 import Center from './Center'
 import Corner from './Corner'
-
 import Button from './Button'
 import Options from './Options'
 import Statistics from './Statistics'
 import ZoomButtons from './ZoomButtons'
 
-import renderMap from './renderMap'
 import emojis from './emojis'
 
-import { getTest } from '../store/selectors'
+import { optionsMenuOpenSelector } from '../store/selectors'
+import { toggleOptionsMenuOpen } from '../store/actions'
+import { updateColors } from '../map/update'
 
-class View extends React.Component {
+class View extends React.PureComponent {
   render () {
     return (
       <>
         <Corner top left>
-          <ZoomButtons view={this.props.map.getView()} />
+          <ZoomButtons />
         </Corner>
         <Corner top right>
-          <Button>{emojis.options}</Button>
+          <Button onClick={this.props.toggleOptionsMenuOpen}>{emojis.options}</Button>
         </Corner>
         <Center>
           <Options />
-          bazinga
-          {this.props.test}
-          <button onClick={this.props.addTest}>aaa</button>
         </Center>
         <Corner bottom left>
           <Statistics />
@@ -41,25 +38,15 @@ class View extends React.Component {
 }
 
 View.propTypes = {
-  map: PropTypes.object.isRequired,
-  test: PropTypes.string,
-  addTest: PropTypes.func
+  optionsMenuOpen: PropTypes.bool.isRequired,
+  toggleOptionsMenuOpen: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-  test: getTest(state)
+  optionsMenuOpen: optionsMenuOpenSelector(state),
+  testTrigger: updateColors(state)
 })
 
-const mapDispatchToProps = dispatch => ({
-  addTest: () => dispatch(state => ({
-    ...state,
-    howDidThisWorkAgain: state.howDidThisWorkAgain + 'boing'
-  }))
-})
+const mapDispatchToProps = { toggleOptionsMenuOpen }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(View)
-
-export { renderMap }
+export default connect(mapStateToProps, mapDispatchToProps)(View)

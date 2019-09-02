@@ -1,14 +1,27 @@
-// TODO put more strings here
+const hadThat = ['']
+
 const starts = [
-  'Red', 'Orange', 'Blue', 'Black', 'White', 'Deadly'
+  'Red', 'Orange', 'Blue', 'Yellow', 'Green', 'Black', 'White', 'Ultraviolet',
+  'Deadly', 'Amazing', 'Dangerous', 'Astonishing',
+  'Töfte', 'Knorke', 'Schnieke',
+  'Tunnel', 'Sewer', 'Underground',
+  ''
 ]
 
 const mids = [
-  'Rodent', 'Rat', 'Critter', 'Creature', 'Vermin'
+  'Rodent', 'Rat', 'Critter', 'Creature', 'Vermin',
+  'Tea', 'Sausage', 'Ice Cream', 'Cheese',
+  'Nager',
+  'Snake',
+  ''
 ]
 
 const ends = [
-  'Killers', 'Team', 'Force', 'Sacks', 'Boys'
+  'Killers', 'Sacks', 'Boys', 'Dimwits',
+  'Masters', 'Heroes', 'Team', 'Force',
+  'Pack', 'Horde', 'Flut',
+  'Rules',
+  ''
 ]
 
 /**
@@ -20,4 +33,15 @@ const getRandom = a => a[Math.floor(Math.random() * a.length)]
 /**
  * @returns {string} randomized faction name
  */
-export default () => `${getRandom(starts)} ${getRandom(mids)} ${getRandom(ends)}`
+export default () => {
+  let name = ''
+  // reroll until unique - need lots of source names
+  while (hadThat.includes(name)) {
+    name = name = [
+      getRandom(starts),
+      getRandom(mids),
+      getRandom(ends)
+    ].filter(x => x).join(' ')
+  }
+  return name
+}

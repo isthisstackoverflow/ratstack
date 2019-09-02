@@ -1,16 +1,23 @@
 import Store from 'repatch'
 import newState from './newState'
+import isDevMode from '../lib/isDevMode'
+import diff from '../lib/diff'
 
+// logger from repatch example is nice
 const logger = store => next => reducer => {
   const state = store.getState()
   const nextState = reducer(state)
-  console.log(state, nextState)
+  const old = diff(state, nextState)
+  const nuevo = diff(nextState, state)
+  console.log('%c old -> new ', 'background: #222; color: #bada55')
+  console.table(old)
+  console.table(nuevo)
   return next(_ => nextState)
 }
 
-// nesting game state in case I'll have data outside of it
-const store =
-  new Store(newState())
-    .addMiddleware(logger)
+const store = new Store(newState())
+if (isDevMode) {
+  store.addMiddleware(logger)
+}
 
 export default store

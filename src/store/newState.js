@@ -1,35 +1,32 @@
 import { DECLARATION } from './definitions'
-import { districtParts as partNames } from '../data/districtRelations'
 import generateFactionName from './generateFactionName'
 
-const initFactionData = () => ({
+import { getHslColorsFor } from '../lib/randomColor'
+import { districtParts as partNames } from '../data/districtRelations'
+
+const colors = getHslColorsFor(partNames)
+
+const initFactionData = id => ({
+  id,
+  color: colors[id],
   name: generateFactionName(),
   declaration: DECLARATION.PACK,
   think: [],
   eat: 1000
 })
 
-const initDistrictData = (name, faction) => ({
+const initDistrictData = (name, factionId) => ({
   name,
-  faction,
+  factionId,
   rats: 8,
   obedience: 0,
   buildings: []
 })
 
-export default () => {
-  const faction = partNames.map(initFactionData)
-  const district = partNames.map((partName, i) => {
-    initDistrictData(partName, faction[i])
-  })
-  const map = {
-    minZoom: 10,
-    maxZoom: 28
+export default () => ({
+  factions: partNames.map((_, idx) => initFactionData(idx)),
+  districts: partNames.map((partName, i) => initDistrictData(partName, i)),
+  ui: {
+    optionsMenuOpen: false
   }
-
-  return {
-    faction,
-    district,
-    map
-  }
-}
+})
