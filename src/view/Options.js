@@ -10,8 +10,10 @@ import { optionsMenuOpenSelector } from '../store/selectors'
 
 const OptionsMenu = styled.div`
   max-width: 80%;
-  background: #099;
+  background: #FFA;
   padding: 32px;
+  border: 2px solid black;
+  border-radius: 6px;
 `
 
 class Options extends React.Component {

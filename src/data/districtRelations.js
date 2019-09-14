@@ -241,6 +241,17 @@ export const districtToPart = {
   ]
 }
 
+// TODO note all neighbourh relations
+export const districtNeighbourRelation = {
+  Kirchwerder: ['Ochsenwerder', 'Reitbrook', 'Neuengamme'],
+  Neuengamme: ['Kirchwerder', 'Reitbrook', 'Allermöhe', 'Curslack', 'Altengamme'],
+  Altengamme: ['Neuengamme', 'Curslack', 'Bergedorf'],
+  Curslack: ['Neuengamme', 'Allermöhe', 'Bergedorf', 'Altengamme'],
+  Bergedorf: ['Altengamme', 'Curslack', 'Allermöhe', 'Neuallermöhe', 'Billwerder', 'Lohbrügge'],
+  Ochsenwerder: ['Spadenland', 'Tatenberg', 'Reitbrook', 'Kirchwerder'],
+  Reitbrook: ['Ochsenwerder', 'Allermöhe', 'Neuengamme', 'Kirchwerder']
+}
+
 export const districtIndex =
   districtParts.reduce((acc, next, i) => {
     acc[next] = i

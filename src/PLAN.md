@@ -11,7 +11,7 @@ ConfedeRATe, Think, + Obedience, Screeching
 CorpoRATe Wonderland, Think, + Eat - Obedience, Screeching
 DegeneRATe CelebRATion, Think, + Rats - Eat - Obedience - Think, Mafia
 DirectoRATe, Think, + Obedience, Screeching
-RATionalism, Thin, - Obedience + Think
+RATionalism, Think, - Obedience + Think
 Leader AdmiRATion, Think, + Obedience, Holy Rat Empire
 AppaRATus, Think, + Eat, Lordship
 AristocRATs, Think, + Obedience - Eat, Lordship

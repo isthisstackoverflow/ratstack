@@ -10,6 +10,9 @@ const districtSource = new VectorSource({
   })).readFeatures(districts)
 })
 
+// TODO - put a mid-source in here that groups district Sources
+// => must be able to show a faction name across multiple districts
+
 const districtVector = new VectorLayer({
   source: districtSource
 })
