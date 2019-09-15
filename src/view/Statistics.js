@@ -22,6 +22,10 @@ const StyledData = styled.li`
   list-style-type: none;
 `
 
+const StyledDataHeader = styled(StyledData)`
+  text-decoration: underline;
+`
+
 /** better make this a module */
 const LeftPad = styled.span`
   float: right;
@@ -30,9 +34,12 @@ const LeftPad = styled.span`
 
 const Statistics = _ => (
   <StyledStatistics>
+    <StyledDataHeader>$Faction Name</StyledDataHeader>
     <StyledData>Rats <LeftPad>123</LeftPad></StyledData>
     <StyledData>Eat <LeftPad>1</LeftPad></StyledData>
     <StyledData>Think <LeftPad>12</LeftPad></StyledData>
+    <StyledDataHeader>$District Name</StyledDataHeader>
+    <StyledData>Rats <LeftPad>123</LeftPad></StyledData>
     <StyledData>Obedience <LeftPad>1234</LeftPad></StyledData>
   </StyledStatistics>
 )

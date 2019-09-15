@@ -9,7 +9,7 @@ export default styled.button`
   font-size: 18px;
   line-height: 18px;
   border: 2px solid black;
-  border-radius: 6px;
+  border-radius: ${({ round }) => round ? '50%' : '6px'};
 
   padding: 8px 4px;
 

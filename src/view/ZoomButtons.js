@@ -37,12 +37,14 @@ class ZoomButtons extends React.Component {
         <Button
           onClick={this.getZoom(1)}
           disabled={this.state.zoomInDisabled}
+          title="Zoom In"
         >
           {emojis.plus}
         </Button>
         <Button
           onClick={this.getZoom(-1)}
           disabled={this.state.zoomOutDisabled}
+          title="Zoom Out"
         >
           {emojis.minus}
         </Button>
