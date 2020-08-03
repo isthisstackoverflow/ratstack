@@ -14,6 +14,6 @@
 
 Something gReAT this way comes.
 
-But it's not quite here yet, and will probably take months to years.
+Or does it? I really forgot about this project and now I'll probably never complete it. But just think about how great it could have become! Amazing. Truly, the real treasure was the friendship we made along the way.
 
 [GitHub Page](https://isthisstackoverflow.github.io/ratstack/).
